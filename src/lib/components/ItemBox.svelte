@@ -1,24 +1,15 @@
 <script lang="ts">
-  export let name = "", amount = 0, expired=new Date(), imageBox="";
+  export let name = "Default", amount = 0, exp=(Date.now()), image="/Image.svg";
+
+  let expiredDate = (Date.now() - exp)/(1000 * 60 * 60 * 24);
 </script>
 
-<div class="h-[68px] pr-[109px] justify-start items-center gap-4 inline-flex">
-  <div class="w-6 h-6 p-0.5 justify-center items-center inline-flex">
-    <div class="w-5 h-5 relative bg-white rounded border border-zinc-900"></div>
-  </div>
-  <div class="w-[178px] h-[68px] relative">
-    <div class="left-[81px] top-0 absolute text-black text-base font-normal">
-      {name}
-    </div>
-    <div class="left-[81px] top-[53px] absolute text-black text-xs font-normal">
-      Expired in {expired.toDateString()} days
-    </div>
-    <div class="left-[81px] top-[29px] absolute text-neutral-600 text-xs font-normal">
-      Amount : {amount} unit
-    </div>
-    <div class="w-[68px] h-[68px] p-[22px] left-0 top-0 absolute bg-zinc-100 rounded-sm justify-center items-center inline-flex">
-      <img src={imageBox} alt="imagebox" />
-      <div class="w-6 h-6 relative flex-col justify-start items-start flex"></div>
+<div class="w-28 h-32 relative bg-white rounded-lg border border-black">
+  <div class="w-28 h-20 left-0 top-0 absolute justify-center items-center inline-flex">
+    <div class="w-28 h-20 bg-zinc-100 rounded-lg justify-center items-center inline-flex">
+      <img class="w-full h-6 relative flex-col justify-start items-start flex rounded-t-lg" src={image} alt="image1"/>
     </div>
   </div>
+  <div class="w-24 h-3 left-[8px] top-[90px] absolute text-black text-sm font-normal">{name} ({amount})</div>
+  <div class="w-24 h-3 left-[7.53px] top-[110.88px] absolute text-neutral-600 text-xs font-normal">Expired in {expiredDate} days</div>
 </div>
