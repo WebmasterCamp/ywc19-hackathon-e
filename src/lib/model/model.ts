@@ -7,7 +7,7 @@ export interface MyFridge {
 export interface ItemProp {
 	name: string;
 	amount: number;
-	exp: Date;
+	exp: number;
 	imgID: string;
 }
 
