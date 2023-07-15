@@ -1,15 +1,28 @@
 <script lang="ts">
   import ItemBox from '$lib/components/ItemBox.svelte';
 	import type { PageData } from './$types';
-
   import { ingredients } from '$lib/store/ingredient';
+  import type { ItemProp } from "$lib/model/model";
+
 
   const addToStore = (obj: any) => {
     $ingredients = $ingredients.concat(obj)
     console.log("Test")
   }
+
+  let pool: any[] = []
+  let isClose = true;
+
+  const onClose = () => {
+    isClose = !isClose
+  }
+
+  const HandlePoolChange = (prop: ItemProp) => {
+    if(pool.length<3)
+      pool = pool.concat(prop)
+  }
     
-  export let data : PageData
+  export let data : PageData;
 </script>
 
 <p>Test</p>
@@ -29,7 +42,7 @@
       </div>
       <div class="flex flex-wrap px-4 w-screen mb-2">
         {#each data.result.meat as item}
-        <ItemBox name={item.name} exp={item.exp} amount={item.amount} image={item.imgID} on:Touch={() => {addToStore(item)}}/>
+        <ItemBox name={item.name} exp={item.exp} amount={item.amount} image={item.imgID}/>
         {/each}
       </div>
     </div>
@@ -57,4 +70,11 @@
       <a class="text-white" href="/fridge/add">+</a>
     </div>
     <nav class="fixed bottom-0 w-screen border-t-2 border-"></nav>
+    <div class={isClose ? "fixed w-full bottom-0 bg-white p-8 rounded-tr-lg rounded-tl-lg shadow-top" :"hidden"}>
+      <h1>Prepare Ingredients (3)</h1>
+        {#each pool as item}
+        <ItemBox name={item.name} exp={item.exp} amount={item.amount} image={item.imgID}/>
+        {/each}
+      <button on:click={onClose}>Let's Cook</button>
+    </div>
   </div>
