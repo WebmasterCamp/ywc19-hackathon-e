@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let name = "Default", amount = 0, exp=(Date.now()), image="/Image.svg";
+  export let name = "Default", amount = 0, exp=0, image="/Image.svg";
 
   let expiredDate = (Date.now() - exp)/(1000 * 60 * 60 * 24);
 </script>

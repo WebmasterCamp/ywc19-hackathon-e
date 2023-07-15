@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let name = "Default", amount = 0, exp=(Date.now()), image="/image/mocking/mockimg.svg";
+  export let name = "Default", amount = 0, exp = 0, image="/image/mocking/mockimg.svg";
 
   let expiredDate = (Date.now() - exp)/(1000 * 60 * 60 * 24);
 </script>
@@ -10,6 +10,6 @@
   </div>
   <div class="flex flex-col space-y-1 p-2">
     <h1>{name} ({amount})</h1>
-    <p class=" text-sm">Expired in {amount} days</p>
+    <p class=" text-sm">Expired in {exp} days</p>
   </div>
 </div>
