@@ -31,7 +31,6 @@
   export let data: PageData;
 </script>
 
-<p>Test</p>
 <div class="flex flex-col w-screen">
   <div class="flex w-screen justify-between px-4">
     <h1>My fridge</h1>
@@ -125,5 +124,7 @@
       />
     {/each}
   </div>
-  <button class="w-full bg-black text-white my-1 py-2 rounded-lg">Let's Cook</button>
+  <button class="w-full bg-black text-white my-1 py-2 rounded-lg">
+   <a href="/menulist">Let's Cook</a> 
+  </button>
 </Drawer>
