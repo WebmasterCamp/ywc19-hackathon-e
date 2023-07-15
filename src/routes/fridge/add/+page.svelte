@@ -85,7 +85,7 @@
   transitionParams={transitionParamsBottom}
   bind:hidden={hidden8}
   id="sidebar8"
-  class="rounded-t-2xl"
+  class="rounded-t-2xl p-4 shadow-top"
 >
   <div class="flex items-center">
     <h5
