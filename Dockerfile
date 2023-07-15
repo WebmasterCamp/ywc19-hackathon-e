@@ -14,7 +14,7 @@ WORKDIR /app
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 RUN npx pnpm -r i --frozen-lockfile
 
-COPY postcss.config.js svelte.config.js tailwind.config.js tsconfig.json vite.config.ts ./
+COPY postcss.config.js svelte.config.js tailwind.config.cjs tsconfig.json vite.config.ts ./
 COPY static ./static
 COPY src ./src
 
