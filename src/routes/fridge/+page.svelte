@@ -1,6 +1,13 @@
 <script lang="ts">
   import ItemBox from '$lib/components/ItemBox.svelte';
 	import type { PageData } from './$types';
+
+  import { ingredients } from '$lib/store/ingredient';
+
+  const addToStore = (obj: any) => {
+    $ingredients = $ingredients.concat(obj)
+    console.log("Test")
+  }
     
   export let data : PageData
 </script>
@@ -22,7 +29,7 @@
       </div>
       <div class="flex flex-wrap px-4 w-screen mb-2">
         {#each data.result.meat as item}
-        <ItemBox name={item.name} exp={item.exp} amount={item.amount} image={item.imgID}/>
+        <ItemBox name={item.name} exp={item.exp} amount={item.amount} image={item.imgID} on:Touch={() => {addToStore(item)}}/>
         {/each}
       </div>
     </div>

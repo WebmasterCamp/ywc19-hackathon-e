@@ -2,17 +2,20 @@
   import Icon from "@iconify/svelte";
 
   import ItemBoxEdit from "$lib/components/ItemBoxEdit.svelte";
+  import type { PageData } from "./$types";
 
-  export let data;
+  export let data: PageData;
 </script>
 
-<div class="max-h-screen flex flex-col">
+<div class="h-screen flex flex-col max-w-screen">
   <div class="my-2">
     <div class="flex items-center text-3xl">
-      <Icon icon="ic:round-arrow-back-ios" />
+      <a href="/fridge">
+        <Icon icon="ic:round-arrow-back-ios" />
+      </a>
       <h1 class="flex-grow text-center">Adjust Ingredients</h1>
     </div>
-    <div class="mx-4">
+    <div class="mx-4 overflow-scroll">
       <label
         for="search"
         class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -35,12 +38,15 @@
           type="submit"
           class="h-8 w-8 absolute right-2.5 bottom-2.5 focus:ring-4 text-center"
         >
-          <Icon icon="carbon:close-outline" class="text-black dark:text-white" />
+          <Icon
+            icon="carbon:close-outline"
+            class="text-black dark:text-white"
+          />
         </button>
       </div>
     </div>
   </div>
-  <div class="flex-glow">
+  <div class="grow">
     <div class="w-full">
       <div class="bg-gray-300 py-1 px-4">Meat</div>
       <ItemBoxEdit />
@@ -50,11 +56,14 @@
       <ItemBoxEdit />
     </div>
     <div class="w-full">
-      <div class="bg-gray-300 py-1 px-4">Daily</div>
+      <div class="bg-gray-300 py-1 px-4">Dairy</div>
       <ItemBoxEdit />
     </div>
   </div>
-  <div class="">
-    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Default</button>
-  </div>
+  <button
+    type="button"
+    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 mx-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+  >
+    Next
+  </button>
 </div>
