@@ -13,8 +13,8 @@
     </div>
     <div class="flex space-x-3 px-4">
       <a href="/">Meat</a>
-      <a>Vegetable</a>
-      <a>Dairy</a>
+      <a href="/">Vegetable</a>
+      <a href="/">Dairy</a>
     </div>
     <div class="flex flex-col">
       <div class="w-screen bg-gray-200 px-4">
@@ -37,6 +37,8 @@
         <ItemBox image="/Image.svg" />
       </div>
     </div>
-    <a href="/fridge/add"><div class="rounded-full w-20 h-20 bg-black">+</div></a>
-    
+    <div class="rounded-full w-10 h-10 bg-black fixed bottom-14 right-0 flex justify-center items-center">
+      <a class="text-white" href="/fridge/food">+</a>
+    </div>
+    <nav class="fixed bottom-0 w-screen border-t-2 border-"></nav>
   </div>
