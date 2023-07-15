@@ -21,9 +21,9 @@
         <h2>Meat</h2>
       </div>
       <div class="flex flex-col space-y-4 px-4">
-        <ItemBox imageBox="/Image.svg" />
-        <ItemBox imageBox="/Image.svg" />
-        <ItemBox imageBox="/Image.svg" />
+        <ItemBox image="/Image.svg" />
+        <ItemBox image="/Image.svg" />
+        <ItemBox image="/Image.svg" />
       </div>
     </div>
     <div class="flex flex-col">
@@ -31,11 +31,12 @@
         <h2>Vegetable</h2>
       </div>
       <div class="flex flex-col space-y-4 px-4">
-        <ItemBox imageBox="/Image.svg" />
-        <ItemBox imageBox="/Image.svg" />
-        <ItemBox imageBox="/Image.svg" />
-        <ItemBox imageBox="/Image.svg" />
+        <ItemBox image="/Image.svg" />
+        <ItemBox image="/Image.svg" />
+        <ItemBox image="/Image.svg" />
+        <ItemBox image="/Image.svg" />
       </div>
     </div>
-    <div class="rounded-full w-20 h-20 bg-black">+</div>
+    <a href="/fridge/add"><div class="rounded-full w-20 h-20 bg-black">+</div></a>
+    
   </div>
