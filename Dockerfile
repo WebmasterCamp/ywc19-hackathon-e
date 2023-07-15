@@ -1,37 +1,32 @@
-FROM node:lts-alpine3.16 as deps
+FROM node:18-alpine as deps-prod
 
 WORKDIR /app
 
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
-RUN yarn global add pnpm && pnpm -r i --frozen-lockfile
+RUN npx pnpm -r i --frozen-lockfile --prod
 
 # ? -------------------------
 
-FROM node:lts-alpine3.16 as deps-prod
+FROM node:18-alpine as builder
 
 WORKDIR /app
 
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
-RUN yarn global add pnpm && pnpm -r i --frozen-lockfile --prod
+RUN npx pnpm -r i --frozen-lockfile
+
+COPY postcss.config.js svelte.config.js tailwind.config.js tsconfig.json vite.config.ts ./
+COPY static ./static
+COPY src ./src
+
+RUN npx pnpm build
 
 # ? -------------------------
 
-FROM node:lts-alpine3.16 as builder
-
-WORKDIR /app
-COPY . .
-COPY --from=deps /app/node_modules ./node_modules
-
-RUN yarn global add pnpm && pnpm build
-
-# ? -------------------------
-
-FROM gcr.io/distroless/nodejs:18 as runner
+FROM node:18-alpine as runner
 
 ENV NODE_ENV production
 
-COPY data ./data
-COPY package.json pnpm-lock.yaml ./
+COPY package.json ./
 COPY --from=deps-prod /app/node_modules ./node_modules
 COPY --from=builder /app/.svelte-kit ./.svelte-kit
 COPY --from=builder /app/build ./build
