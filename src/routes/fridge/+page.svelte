@@ -3,6 +3,8 @@
   import type { PageData } from "./$types";
 
   import { ingredients } from "$lib/store/ingredient";
+  import { sineIn } from "svelte/easing";
+  import { Button, CloseButton, Drawer } from "flowbite-svelte";
 
   const addToStore = (obj: any) => {
     if ($ingredients.find((e: any) => e.name === obj.name)) {
@@ -14,6 +16,16 @@
       }
     }
   };
+
+  let hidden8 = true;
+
+  let transitionParamsBottom = {
+    y: 320,
+    duration: 200,
+    easing: sineIn,
+  };
+
+  $: hidden8 = $ingredients.length === 0;
 
   export let data: PageData;
 </script>
@@ -83,3 +95,15 @@
   </div>
   <nav class="fixed bottom-0 w-screen border-t-2 border-" />
 </div>
+<Drawer
+  placement="bottom"
+  width="w-full"
+  transitionType="fly"
+  transitionParams={transitionParamsBottom}
+  bind:hidden={hidden8}
+  backdrop={false}
+  id="sidebar8"
+  class="rounded-t-2xl"
+>
+  
+</Drawer>
