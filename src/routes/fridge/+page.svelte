@@ -29,15 +29,18 @@
 
   const veg = writable(data.result.veg);
 
+  let debug = false;
+
   const debugNoti = () => {
+    debug = true;
     $veg.forEach((item) => {
       item = {
         ...item,
         exp: 1,
       };
     });
-    new Notification("", {
-      body: "Hello, world!",
+    new Notification("You food is going to expired", {
+      body: "Carrot, Broccoli and Potato",
     });
   };
 
@@ -62,7 +65,7 @@
       <Icon class="text-black dark:text-white" icon="ic:outline-search" />
     </h1>
   </div>
-  <div class="flex space-x-3 p-4 ">
+  <div class="flex space-x-3 p-4">
     <button class="w-[10%] bg-main rounded-sm">All</button>
     <button class="w-[30%] text-end pr-2 rounded-sm bg-drop">Meat</button>
     <button class="w-[40%] text-end pr-2 rounded-sm bg-drop">Vegetable</button>
@@ -74,11 +77,7 @@
     <div class="flex flex-wrap px-4 w-screen mb-2">
       {#each data.result.meat as item}
         <button on:click|stopPropagation={(e) => addToStore(item, e)}>
-          <ItemBox
-            name={item.name}
-            exp={item.exp}
-            image={item.imgID}
-          />
+          <ItemBox name={item.name} exp={item.exp} image={item.imgID} />
         </button>
       {/each}
     </div>
@@ -87,28 +86,28 @@
     <div class="w-screen bg-drop-hard h-2" />
     <h2 class="pl-4 py-2">Vegetable</h2>
     <div class="flex flex-wrap px-4 w-screen mb-2">
-      {#each $veg as item}
-        <button on:click|stopPropagation={(e) => addToStore(item, e)}>
-          <ItemBox
-            name={item.name}
-            exp={item.exp}
-            image={item.imgID}
-          />
-        </button>
-      {/each}
+      {#if debug}
+        {#each $veg as item}
+          <button on:click|stopPropagation={(e) => addToStore(item, e)}>
+            <ItemBox name={item.name} exp={1} image={item.imgID} />
+          </button>
+        {/each}
+      {:else}
+        {#each $veg as item}
+          <button on:click|stopPropagation={(e) => addToStore(item, e)}>
+            <ItemBox name={item.name} exp={item.exp} image={item.imgID} />
+          </button>
+        {/each}
+      {/if}
     </div>
   </div>
   <div class="flex flex-col">
     <div class="w-screen bg-drop-hard h-2" />
-    <h2 class="pl-4 py-2">Vegetable</h2>
+    <h2 class="pl-4 py-2">Dairy</h2>
     <div class="flex flex-wrap px-4 w-screen mb-2">
       {#each data.result.dairy as item}
         <button on:click|stopPropagation={(e) => addToStore(item, e)}>
-          <ItemBox
-            name={item.name}
-            exp={item.exp}
-            image={item.imgID}
-          />
+          <ItemBox name={item.name} exp={item.exp} image={item.imgID} />
         </button>
       {/each}
     </div>
