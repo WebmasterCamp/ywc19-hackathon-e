@@ -21,6 +21,9 @@
     />
     <div class="flex flex-col pl-4">
       <h1 class="text-black text-base font-normal">{name}</h1>
+      <div class="text-black text-xs font-normal">
+        Expired in {exp} days
+      </div>
     </div>
   </div>
 </div>
