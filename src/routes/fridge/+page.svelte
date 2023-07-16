@@ -144,7 +144,9 @@
       />
     {/each}
   </div>
-  <button class="w-full bg-main text-white my-1 py-2 rounded-lg">
-    <a href="/menulist">Let's Cook</a>
-  </button>
+  <a href="/menulist">
+    <button class="w-full bg-main text-white my-1 py-2 rounded-lg">
+      Let's Cook
+    </button>
+  </a>
 </Drawer>
