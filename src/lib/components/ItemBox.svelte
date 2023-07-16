@@ -8,7 +8,7 @@
 
 </script>
 
-<div class="flex flex-col w-[110px] rounded-xl border-2 overflow-hidden mb-2 mr-2 itemboxs" >
+<div class="flex flex-col w-[110px] rounded-xl overflow-hidden mb-2 mr-1 shadow-sm itemboxs" >
   <img src={image} alt="item-img" />
   <div class="flex flex-col space-y-1 p-2 items-start">
     <h1>{name}</h1>
