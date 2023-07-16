@@ -1,4 +1,4 @@
-import type { PageServerLoad } from './$types';
+import type { Actions, PageServerLoad } from './$types';
 import pb from '$lib/server/db';
 
 export const load = (async ({ url }) => {
@@ -29,3 +29,11 @@ export const load = (async ({ url }) => {
         items: records,
     };
 }) satisfies PageServerLoad;
+
+export const actions: Actions = {
+    default: async ({request}) => {
+        const data = await request.json();
+
+        
+    }
+};

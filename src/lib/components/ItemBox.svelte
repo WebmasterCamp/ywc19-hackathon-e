@@ -1,6 +1,5 @@
 <script lang="ts">
   let name = "Default";
-  let amount = 0;
   let exp = 0;
   let image = "/image/mocking/mockimg.svg";
   

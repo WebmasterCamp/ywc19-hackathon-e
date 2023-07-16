@@ -3,13 +3,15 @@
 
   export let name = "Default",
     image = "/Image.svg",
-    isWantCheck = true;
+    exp = 0,
+    isWantCheck = true,
+    id = "";
 </script>
 
 <div class="w-full justify-start items-center my-1 inline-flex">
   {#if isWantCheck}
     <div class="mx-5 w-6 h-6 justify-center items-center inline-flex">
-      <Checkbox />
+      <Checkbox name="add" value={id}/>
     </div>
   {/if}
   <div class="w-full h-16 flex">
