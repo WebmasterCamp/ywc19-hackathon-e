@@ -16,11 +16,13 @@
     if ($ingredients.find((e: any) => e.name === obj.name)) {
       console.log("found");
       $ingredients = $ingredients.filter((e: any) => e.name != obj.name);
-      box?.classList.remove("!bg-orange-200");
+      box?.classList.remove("!border-4");
+      box?.classList.remove("!border-main");
     } else {
       if ($ingredients.length < 3) {
         $ingredients = $ingredients.concat(obj);
-        box?.classList.add("!bg-orange-200");
+        box?.classList.add("!border-4");
+        box?.classList.add("!border-main");
       }
     }
   };
@@ -115,9 +117,9 @@
     <div class="h-80" />
   {/if}
   <div
-    class="rounded-full w-10 h-10 bg-black fixed bottom-14 right-0 flex justify-center items-center"
+    class="rounded-full w-14 h-14 bg-main fixed bottom-14 right-2 flex justify-center items-center"
   >
-    <a class="text-white" href="/fridge/add">+</a>
+    <a class="text-white text-[18px]" href="/fridge/add">+</a>
   </div>
   <nav class="fixed bottom-0 w-screen border-t-2 border-" />
   <button on:click={debugNoti}>Test</button>
