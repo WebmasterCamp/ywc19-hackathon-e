@@ -7,6 +7,9 @@
   import { Drawer } from "flowbite-svelte";
   import ItemBoxEdit from "$lib/components/ItemBoxEdit.svelte";
   import Icon from "@iconify/svelte";
+  import { writable } from "svelte/store";
+
+  export let data: PageData;
 
   const addToStore = (obj: any, e: MouseEvent) => {
     const box = (e.target as Element).closest(".itemboxs");
@@ -22,6 +25,20 @@
     }
   };
 
+  const veg = writable(data.result.veg);
+
+  const debugNoti = () => {
+    $veg.forEach((item) => {
+      item = {
+        ...item,
+        exp: 1,
+      };
+    });
+    new Notification("", {
+      body: "Hello, world!",
+    });
+  };
+
   let hidden8 = true;
 
   let transitionParamsBottom = {
@@ -31,13 +48,11 @@
   };
 
   $: hidden8 = $ingredients.length <= 0;
-
-  export let data: PageData;
 </script>
 
 <div class="flex flex-col w-screen pt-4">
   <div class="w-full border-b-2 px-4">
-    <img src="./image/mocking/logo.png" alt="logo">
+    <img src="./image/mocking/logo.png" alt="logo" />
   </div>
   <div class="flex w-screen justify-between px-4 items-baseline py-2">
     <h1 class="font-bold text-[20px]">My fridge</h1>
@@ -73,8 +88,8 @@
       <h2>Vegetable</h2>
     </div>
     <div class="flex flex-wrap px-4 w-screen mb-2">
-      {#each data.result.veg as item}
-        <button on:click|stopPropagation={(e) => addToStore(item, this.Element)}>
+      {#each $veg as item}
+        <button on:click|stopPropagation={(e) => addToStore(item, e)}>
           <ItemBox
             name={item.name}
             exp={item.exp}
@@ -111,12 +126,7 @@
     <a class="text-white" href="/fridge/add">+</a>
   </div>
   <nav class="fixed bottom-0 w-screen border-t-2 border-" />
-  <button on:click={()=>{
-    new Notification("Hello", {
-      body: "Hello, world!",
-    });
-  }}>--noti--
-  </button>
+  <button on:click={debugNoti}>Test</button>
 </div>
 <Drawer
   placement="bottom"
