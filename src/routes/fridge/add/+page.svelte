@@ -58,26 +58,20 @@
   </div>
   <div class="grow">
     <div class="w-full">
-      <div class="bg-gray-300 py-1 px-4">Meat</div>
-      <ItemBoxEdit />
-    </div>
-    <div class="w-full">
-      <div class="bg-gray-300 py-1 px-4">Vegetable</div>
-      <ItemBoxEdit />
-    </div>
-    <div class="w-full">
-      <div class="bg-gray-300 py-1 px-4">Dairy</div>
-      <ItemBoxEdit />
+      {#each data.items as item}
+        <ItemBoxEdit name={item.name} />
+      {/each}
     </div>
   </div>
-  <button
-    type="button"
-    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 mx-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-    on:click={() => (hidden8 = false)}
-  >
-    Next
-  </button>
 </div>
+<button
+  type="button"
+  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 mx-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+  on:click={() => (hidden8 = false)}
+>
+  Next
+</button>
+
 <Drawer
   placement="bottom"
   width="w-full"

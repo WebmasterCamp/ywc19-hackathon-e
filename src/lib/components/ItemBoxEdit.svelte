@@ -2,8 +2,6 @@
   import { Checkbox } from "flowbite-svelte";
 
   export let name = "Default",
-    amount = 0,
-    exp = 0,
     image = "/Image.svg",
     isWantCheck = true;
 </script>
@@ -23,12 +21,6 @@
     />
     <div class="flex flex-col pl-4">
       <h1 class="text-black text-base font-normal">{name}</h1>
-      <div class="text-black text-xs font-normal">
-        Expired in {exp} days
-      </div>
-      <div class="text-neutral-600 text-xs font-normal">
-        Amount : {amount} unit
-      </div>
     </div>
   </div>
 </div>
