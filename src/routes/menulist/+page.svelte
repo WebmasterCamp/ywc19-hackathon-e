@@ -2,6 +2,7 @@
   import Icon from "@iconify/svelte";
   import type { PageData } from "./$types";
   import { ingredients } from "$lib/store/ingredient";
+  import ItemMenu from "$lib/components/ItemMenu.svelte";
 
   $ingredients = []
 
@@ -13,13 +14,21 @@
     <a href="/fridge">
       <Icon icon="ic:round-arrow-back-ios" />
     </a>
-    <h1>Cook Book</h1>
+    <h1 class="font-[500] text-[24px] text-main">Cook Book</h1>
+    
   </div>
-  <div class="menu" />
+  <div class="flex space-x-3 p-4 ">
+    <button class="w-[10%] bg-main rounded-sm">All</button>
+    <button class="w-[30%] text-end pr-2 rounded-sm bg-drop">Meat</button>
+    <button class="w-[40%] text-end pr-2 rounded-sm bg-drop">Vegetable</button>
+    <button class="w-[30%] text-end pr-2 rounded-sm bg-drop">Dairy</button>
+  </div>
   <div class="flex flex-col">
-    <div class="item" />
-    <div class="item" />
-    <div class="item" />
-    <div class="item" />
+    <ItemMenu />
+    <ItemMenu />
+    <ItemMenu />
+    <ItemMenu />
+    <ItemMenu />
+    <ItemMenu />
   </div>
 </div>

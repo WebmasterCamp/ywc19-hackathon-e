@@ -7,7 +7,7 @@
     imgID = "/Image.svg";
 </script>
 
-<div class="w-full justify-start items-center my-1 inline-flex flex items-center">
+<div class="w-full justify-start my-1 flex items-center">
   <div class="w-full h-16 flex">
     <img
       src={imgID}

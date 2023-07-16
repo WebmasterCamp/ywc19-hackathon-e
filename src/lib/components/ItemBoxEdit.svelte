@@ -26,9 +26,6 @@
       <div class="text-black text-xs font-normal">
         Expired in {exp} days
       </div>
-      <div class="text-neutral-600 text-xs font-normal">
-        Amount : {amount} unit
-      </div>
     </div>
   </div>
 </div>

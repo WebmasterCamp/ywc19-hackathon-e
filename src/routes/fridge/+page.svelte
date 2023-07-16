@@ -135,18 +135,17 @@
   class="rounded-t-2xl p-4 shadow-top"
 >
   <div class="flex-col h-1/2">
-    <h1>Prepare Ingredients (3)</h1>
+    <h1 class="font-bold">Prepare Ingredients (3)</h1>
     {#each $ingredients as item}
       <ItemBoxEdit
         isWantCheck={false}
         name={item.name}
         exp={item.exp}
-        amount={item.amount}
         image={item.imgID}
       />
     {/each}
   </div>
-  <button class="w-full bg-black text-white my-1 py-2 rounded-lg">
+  <button class="w-full bg-main text-white my-1 py-2 rounded-lg">
     <a href="/menulist">Let's Cook</a>
   </button>
 </Drawer>
