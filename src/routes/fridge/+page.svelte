@@ -75,7 +75,6 @@
           <ItemBox
             name={item.name}
             exp={item.exp}
-            amount={item.amount}
             image={item.imgID}
           />
         </button>
@@ -91,7 +90,6 @@
           <ItemBox
             name={item.name}
             exp={item.exp}
-            amount={item.amount}
             image={item.imgID}
           />
         </button>
@@ -107,7 +105,6 @@
           <ItemBox
             name={item.name}
             exp={item.exp}
-            amount={item.amount}
             image={item.imgID}
           />
         </button>

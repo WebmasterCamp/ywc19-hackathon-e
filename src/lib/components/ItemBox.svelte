@@ -4,11 +4,11 @@
   let exp = 0;
   let image = "/image/mocking/mockimg.svg";
   
-  export { name, amount, exp, image };
+  export { name, exp, image };
 
 </script>
 
-<div class="flex flex-col w-[110px] rounded-xl border-2 overflow-hidden mb-2 mr-2" >
+<div class="flex flex-col w-[110px] rounded-xl border-2 overflow-hidden mb-2 mr-2 itemboxs" >
   <img src={image} alt="item-img" />
   <div class="flex flex-col space-y-1 p-2 items-start">
     <h1>{name}</h1>
