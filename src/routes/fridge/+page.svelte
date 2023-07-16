@@ -6,6 +6,7 @@
   import { sineIn } from "svelte/easing";
   import { Drawer } from "flowbite-svelte";
   import ItemBoxEdit from "$lib/components/ItemBoxEdit.svelte";
+  import Icon from "@iconify/svelte";
 
   const addToStore = (obj: any, e: MouseEvent) => {
     const box = (e.target as Element).closest(".itemboxs");
@@ -34,15 +35,21 @@
   export let data: PageData;
 </script>
 
-<div class="flex flex-col w-screen">
-  <div class="flex w-screen justify-between px-4">
-    <h1>My fridge</h1>
-    <div class="o">0</div>
+<div class="flex flex-col w-screen pt-4">
+  <div class="w-full border-b-2 px-4">
+    <img src="./image/mocking/logo.png" alt="logo">
+  </div>
+  <div class="flex w-screen justify-between px-4 items-baseline py-2">
+    <h1 class="font-bold text-[20px]">My fridge</h1>
+    <h1 class="font-bold text-[20px]">
+      <Icon class="text-black dark:text-white" icon="ic:outline-search" />
+    </h1>
   </div>
   <div class="flex space-x-3 px-4">
-    <a href="/">Meat</a>
-    <a href="/">Vegetable</a>
-    <a href="/">Dairy</a>
+    <button class="flex-1 bg-main">All</button>
+    <button class="flex-2 w-full">Meat</button>
+    <button class="flex-4 w-ful">Vegetable</button>
+    <button class="flex-2 w-full">Dairy</button>
   </div>
   <div class="flex flex-col">
     <div class="w-screen bg-gray-200 px-4 mb-2">

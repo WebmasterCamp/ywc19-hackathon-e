@@ -17,9 +17,14 @@ const config = {
 			fontFamily: {
 				'sans': ['Montserrat'],
 				'serif': ['Montserrat'],
-				'mono': ['Montserrat'],
-
+				'mono': ['Montserrat']
+			},
+			colors: {
+				'main': '#EE7B32',
+				'drop-hard':'#EEE',
+				'drop': '#F8F8F8',
 			}
+
 		}
 	},
 
