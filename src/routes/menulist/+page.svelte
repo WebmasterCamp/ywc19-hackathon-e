@@ -25,13 +25,13 @@
   </div>
   <div class="flex flex-col px-4">
     <ItemMenu name="Coca-cola Chicken" ingredient=3 timeCook=35 imgID='./image/menu/menu0.png'/>
-    <ItemMenu name="Chicken Stir fried" ingredient=3 timeCook=35 imgID='./image/menu/menu1.png'/>
-    <ItemMenu name="Chicken nibbles with red sauce" ingredient=3 timeCook=35 imgID='./image/menu/menu2.png'/>
-    <ItemMenu name="Papaya salad with raw crab" ingredient=3 timeCook=35 imgID='./image/menu/menu3.png'/>
-    <ItemMenu name="Shrimp papaya salad" ingredient=3 timeCook=35 imgID='./image/menu/menu4.png'/>
-    <ItemMenu name="Basil stir fried with pork and tofu" ingredient=3 timeCook=35 imgID='./image/menu/menu5.png'/>
-    <ItemMenu name="Pork and vegetable soup" ingredient=3 timeCook=35 imgID='./image/menu/menu6.png'/>
-    <ItemMenu name="Spicy squid" ingredient=3 timeCook=35 imgID='./image/menu/menu7.png'/>
-    <ItemMenu name="Coca-cola pip pip" ingredient=3 timeCook=35 imgID='./image/menu/menu8.png'/>
+    <ItemMenu name="Chicken Stir fried" ingredient=2 timeCook=15 imgID='./image/menu/menu1.png'/>
+    <ItemMenu name="Chicken nibbles with red sauce" ingredient=4 timeCook=45 imgID='./image/menu/menu2.png'/>
+    <ItemMenu name="Papaya salad with raw crab" ingredient=3 timeCook=20 imgID='./image/menu/menu3.png'/>
+    <ItemMenu name="Shrimp papaya salad" ingredient=4 timeCook=15 imgID='./image/menu/menu4.png'/>
+    <ItemMenu name="Basil stir fried with pork and tofu" ingredient=2 timeCook=45 imgID='./image/menu/menu5.png'/>
+    <ItemMenu name="Pork and vegetable soup" ingredient=4 timeCook=40 imgID='./image/menu/menu6.png'/>
+    <ItemMenu name="Spicy squid" ingredient=1 timeCook=60 imgID='./image/menu/menu7.png'/>
+    <ItemMenu name="Coca-cola pip pip" ingredient=4 timeCook=45 imgID='./image/menu/menu8.png'/>
   </div>
 </div>
