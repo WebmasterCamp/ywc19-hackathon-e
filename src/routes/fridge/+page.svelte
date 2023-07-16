@@ -7,13 +7,16 @@
   import { Drawer } from "flowbite-svelte";
   import ItemBoxEdit from "$lib/components/ItemBoxEdit.svelte";
 
-  const addToStore = (obj: any) => {
+  const addToStore = (obj: any, e: MouseEvent) => {
+    const box = (e.target as Element).closest(".itemboxs");
     if ($ingredients.find((e: any) => e.name === obj.name)) {
       console.log("found");
       $ingredients = $ingredients.filter((e: any) => e.name != obj.name);
+      box?.classList.remove("!bg-gray-200");
     } else {
       if ($ingredients.length < 3) {
         $ingredients = $ingredients.concat(obj);
+        box?.classList.add("!bg-gray-200");
       }
     }
   };
@@ -27,8 +30,6 @@
   };
 
   $: hidden8 = $ingredients.length <= 0;
-
-  
 
   export let data: PageData;
 </script>
@@ -49,7 +50,7 @@
     </div>
     <div class="flex flex-wrap px-4 w-screen mb-2">
       {#each data.result.meat as item}
-        <button on:click={() => addToStore(item)}>
+        <button on:click|stopPropagation={(e) => addToStore(item, e)}>
           <ItemBox
             name={item.name}
             exp={item.exp}
@@ -66,14 +67,14 @@
     </div>
     <div class="flex flex-wrap px-4 w-screen mb-2">
       {#each data.result.veg as item}
-      <button on:click={() => addToStore(item)}>
-        <ItemBox
-          name={item.name}
-          exp={item.exp}
-          amount={item.amount}
-          image={item.imgID}
-        />
-      </button>
+        <button on:click|stopPropagation={(e) => addToStore(item, this.Element)}>
+          <ItemBox
+            name={item.name}
+            exp={item.exp}
+            amount={item.amount}
+            image={item.imgID}
+          />
+        </button>
       {/each}
     </div>
   </div>
@@ -83,19 +84,19 @@
     </div>
     <div class="flex flex-wrap px-4 w-screen mb-2">
       {#each data.result.dairy as item}
-        <button on:click={() => addToStore(item)}>
-        <ItemBox
-          name={item.name}
-          exp={item.exp}
-          amount={item.amount}
-          image={item.imgID}
-        />
+        <button on:click|stopPropagation={(e) => addToStore(item, e)}>
+          <ItemBox
+            name={item.name}
+            exp={item.exp}
+            amount={item.amount}
+            image={item.imgID}
+          />
         </button>
       {/each}
     </div>
   </div>
   {#if !hidden8}
-  <div class="h-80" />
+    <div class="h-80" />
   {/if}
   <div
     class="rounded-full w-10 h-10 bg-black fixed bottom-14 right-0 flex justify-center items-center"
@@ -103,12 +104,6 @@
     <a class="text-white" href="/fridge/add">+</a>
   </div>
   <nav class="fixed bottom-0 w-screen border-t-2 border-" />
-  <button on:click={()=>{
-    new Notification("Hello", {
-      body: "Hello, world!",
-    });
-  }}>
-  </button>
 </div>
 <Drawer
   placement="bottom"
@@ -133,6 +128,6 @@
     {/each}
   </div>
   <button class="w-full bg-black text-white my-1 py-2 rounded-lg">
-   <a href="/menulist">Let's Cook</a> 
+    <a href="/menulist">Let's Cook</a>
   </button>
 </Drawer>

@@ -1,7 +1,10 @@
 <script lang="ts">
-	import '../app.postcss';
+    import { onMount } from 'svelte';
 	import '../app.postcss';
 
+	onMount(() => {
+		Notification.requestPermission();
+	});
 </script>
 
 <slot />
