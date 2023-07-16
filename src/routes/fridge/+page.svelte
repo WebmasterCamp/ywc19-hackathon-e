@@ -25,7 +25,7 @@
     easing: sineIn,
   };
 
-  $: hidden8 = $ingredients.length === 0;
+  $: hidden8 = $ingredients.length <= 0;
 
   export let data: PageData;
 </script>
@@ -104,6 +104,4 @@
   backdrop={false}
   id="sidebar8"
   class="rounded-t-2xl"
->
-  
-</Drawer>
+/>
