@@ -23,12 +23,15 @@
     <button class="w-[40%] text-end pr-2 rounded-sm bg-drop">Vegetable</button>
     <button class="w-[30%] text-end pr-2 rounded-sm bg-drop">Dairy</button>
   </div>
-  <div class="flex flex-col">
-    <ItemMenu />
-    <ItemMenu />
-    <ItemMenu />
-    <ItemMenu />
-    <ItemMenu />
-    <ItemMenu />
+  <div class="flex flex-col px-4">
+    <ItemMenu imgID='./image/menu/menu0.png'/>
+    <ItemMenu imgID='./image/menu/menu1.png'/>
+    <ItemMenu imgID='./image/menu/menu2.png'/>
+    <ItemMenu imgID='./image/menu/menu3.png'/>
+    <ItemMenu imgID='./image/menu/menu4.png'/>
+    <ItemMenu imgID='./image/menu/menu5.png'/>
+    <ItemMenu imgID='./image/menu/menu6.png'/>
+    <ItemMenu imgID='./image/menu/menu7.png'/>
+    <ItemMenu imgID='./image/menu/menu8.png'/>
   </div>
 </div>
