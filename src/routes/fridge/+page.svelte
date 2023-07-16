@@ -104,6 +104,12 @@
     <a class="text-white" href="/fridge/add">+</a>
   </div>
   <nav class="fixed bottom-0 w-screen border-t-2 border-" />
+  <button on:click={()=>{
+    new Notification("Hello", {
+      body: "Hello, world!",
+    });
+  }}>--noti--
+  </button>
 </div>
 <Drawer
   placement="bottom"
