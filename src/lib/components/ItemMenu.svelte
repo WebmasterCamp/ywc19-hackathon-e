@@ -16,11 +16,13 @@
       class="relative flex-col justify-start items-start flex w-16 h-16"
     />
     <div class="flex flex-col pl-4">
-      <h1 class="text-black text-base font-normal">{name}</h1>
-      <div class="text-black text-xs font-normal">
+      <h1 class="text-black text-base font-semibold">{name}</h1>
+      <div class="text-black text-xs font-normal flex">
+        <Icon icon="fluent:food-carrot-20-filled" />
         Expired in {ingredient} days
       </div>
-      <div class="text-neutral-600 text-xs font-normal">
+      <div class="text-neutral-600 text-xs font-normal flex">
+        <Icon icon="mdi:clock" />
         Amount : {timeCook} unit
       </div>
     </div>
